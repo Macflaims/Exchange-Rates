@@ -7,6 +7,7 @@
 #container{
     background-color: white;
     max-height: 100vh;
+    min-height: 550px;
     margin-bottom: 5vh;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
@@ -17,6 +18,7 @@
 
 .tabla{
     max-height: 45vh; 
+    min-height: 270px;
     overflow:auto;  
     border: solid 1px; 
 }

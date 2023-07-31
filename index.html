@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exchange Rates</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+  <div class="container">
+    
+    <div class="p-4">
+      <div class="text-center currency-calculator">
+        <h1>Currency Conversion Calculator</h1>
+      </div>
+
+      <div class="text-center currency-table oculto">
+        <h1>Currency Table Conversion</h1>
+      </div>
+      
+
+    <div  class="row mt-3">
+      <div class="col-2"></div>
+      <div id="container" class="col-8 text-center ">
+
+        <div class="row">
+          <div id="calculator-title" class="col-6 p-2 ">
+            <h4>Calculadora</h4>
+          </div>
+          <div id="table-title" class="col-6 no-selected p-2">
+            <h4>Tabla</h4>
+          </div>
+        </div>
+        
+          <label for="date" class="col-form-label fs-2">Date</label>
+          <input class="form-control text-center" type="date" id="date">
+
+          <div class="currency-calculator">
+            <label for="amount" class="form-label fs-2"> Amount </label>
+            
+            <div class="input-group mb-3">   
+              <span class="input-group-text" id="basic-addon1">$</span>
+              <input placeholder="1" min="1" value="1" class="form-control text-center" type="number" id="amount">
+            </div>  
+          </div>
+
+          <div class="form-group">
+            <label for="convert-from" class="form-label fs-2" > From </label>
+            <select class="text-center form-select" id="convert-from">
+              <option selected> Select currency</option>
+            </select>
+          </div>
+          
+          <div class="form-group currency-calculator">
+            <label for="convert-to" class="form-label fs-2"> To </label>
+            <select class="text-center form-select" id="convert-to">
+              <option selected> Select currency</option>
+            </select>
+          </div>
+
+          <div id="result" class="currency-calculator mt-3 text-center"></div>
+
+          <div class="currency-calculator">
+            <button class="btn btn-secondary btn-lg m-3" type="submit" id="convert-button"> Calculate </button>
+          </div>
+          
+          <div class="tabla currency-table oculto m-3">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Currency</th>
+                  <th scope="col">Conversion</th>
+                </tr>
+              </thead>
+              <tbody id="currency-table">
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div> 
+  </div> 
+
+  <script src="./src/main.js" type="module"></script>
+    
+</body>
+</html>

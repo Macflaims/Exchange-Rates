@@ -28,13 +28,18 @@ function removePreviousTable(){
 
 export function setTableCall(){
     const $baseSelector = document.querySelector("#convert-from");
-    $baseSelector.addEventListener("change", ()=>{
-        removePreviousTable();
-        showLoading(document.querySelector("#currency-table"));
-        setCurrencyTable($baseSelector.value, getDate())
-    })
+    $baseSelector.addEventListener("change", ()=>{updateTable($baseSelector.value)})
+
+    const $dateSelector = document.querySelector("#date");
+    $dateSelector.addEventListener("change", ()=>{updateTable($baseSelector.value)})
+}
+
+function updateTable(base){
+    removePreviousTable();
+    showLoading(document.querySelector("#currency-table"));
+    setCurrencyTable(base, getDate())
 }
 
 export function showLoading(element){
-    element.textContent="Cargando..."
+    element.textContent="Loading..."
 }

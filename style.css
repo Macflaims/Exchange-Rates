@@ -1,0 +1,42 @@
+*{
+    padding: 0;
+    margin: 0;
+    transition: all 0.3s linear;
+}
+
+#container{
+    background-color: white;
+    max-height: 100vh;
+    margin-bottom: 5vh;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.no-selected{
+    background-color: rgb(231, 229, 229);
+}
+
+.tabla{
+    max-height: 45vh; 
+    overflow:auto;  
+    border: solid 1px; 
+}
+
+.tabla::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+.tabla::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+
+.tabla::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+.oculto{
+    display: none;
+}
+
+
+

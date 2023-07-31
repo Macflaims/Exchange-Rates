@@ -16,7 +16,11 @@ function calculateExchange(base, to , amount, date){
     fetch(`${url}from=${base}&to=${to}&amount=${amount}&date=${date}`)
     .then(response => response.json())
     .then(responseJSON=>{
-        document.querySelector("#result").textContent= `${amount} ${base} = ${responseJSON.result} ${to}`})
+        if(responseJSON.result === null){
+            document.querySelector("#result").textContent= "There is no data on the selected date"
+        }
+        else{document.querySelector("#result").textContent= `${amount} ${base} = ${responseJSON.result} ${to}`}}
+        )
 }
 
 

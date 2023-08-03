@@ -19,9 +19,11 @@ function calculateExchange(base, to , amount, date){
         if(responseJSON.result === null){
             document.querySelector("#result").textContent= "There is no data on the selected date"
         }
-        else{document.querySelector("#result").textContent= `${amount} ${base} = ${responseJSON.result} ${to}`}}
-        )
-}
+        else if(date){document.querySelector("#result").textContent= `${amount} ${base} on ${date} is equal to ${responseJSON.result} ${to}`}
+        else if(base && to){document.querySelector("#result").textContent= `${amount} ${base} is equal to ${responseJSON.result} ${to}`}
+        else{document.querySelector("#result").textContent="You need to have at least the selected currencies"}    
+    })}
+
 
 
 export function setCurrencyOptions(){
@@ -40,9 +42,11 @@ export function setCurrencyOptions(){
 export function setCalculatorCall(){
     const convertButton = document.querySelector("#convert-button")
     convertButton.addEventListener("click", ()=>{
-    showLoading(document.querySelector("#result"));
-    let apiParameters = getParameters();
-    calculateExchange(apiParameters[0], apiParameters[1], apiParameters[2], apiParameters[3])
+    if(document.querySelector("#convert-from").value !== 'Select currency' && document.querySelector("#convert-to").value !== 'Select currency'){
+        showLoading(document.querySelector("#result"));
+        let apiParameters = getParameters();
+        calculateExchange(apiParameters[0], apiParameters[1], apiParameters[2], apiParameters[3])
+    }
 })
 }
 
